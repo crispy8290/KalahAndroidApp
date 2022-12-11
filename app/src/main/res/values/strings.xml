@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Kalah</string>
+    <string name="player1Name">Player 1 Name</string>
+    <string name="player2Name">Player 2 Name</string>
+    <string name="title_name">Kalah Board Game</string>
+    <string name="name_prompt">Enter player names below</string>
+    <string name="continueButton">Continue</string>
+    <string name="player1WinCounterText">Win Counter: </string>
+    <string name="player2WinCounterText">Win Counter: </string>
+    <string name="startGameButton">Start Game</string>
+    <string name="roundNumberText">Round #</string>
+    <string name="player1WinCounter">0</string>
+    <string name="player2WinCounter">0</string>
+    <string name="roundNumber">1</string>
+    <string name="index0Pit">0</string>
+    <string name="index1Pit">0</string>
+    <string name="index2Pit">0</string>
+    <string name="index3Pit">0</string>
+    <string name="index4Pit">0</string>
+    <string name="index5Pit">0</string>
+    <string name="index6Store">0</string>
+    <string name="index7Pit">0</string>
+    <string name="index8Pit">0</string>
+    <string name="index9Pit">0</string>
+    <string name="index10Pit">0</string>
+    <string name="index11Pit">0</string>
+    <string name="index12Pit">0</string>
+    <string name="index13Store">0</string>
+    <string name="playerTurn">Player Turn: </string>
+    <string name="playerTurnName">Player 1</string>
+    <string name="eventPrompt">steal first move?</string>
+    <string name="promptName">Player</string>
+</resources>
