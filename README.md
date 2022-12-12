@@ -22,6 +22,9 @@ During a player's turn, the player selects one of their own non-empty pits and t
 1. If a player's last seed drop lands in their own store, the player takes another turn.  
 2. If a player's last seed drop lands in one of their own empty pits, the player puts that last seed in their store instead, along with any seeds that are in the opponent's directly-opposing pit.  
 
+*Special First Turn*  
+The very first move in a new game will prompt the opponent to steal the move as their own first move. This is a game-balancing feature as in a perfect game, the starting player will always win.  
+
 *Winning the Game*  
 If a game-ending scenario occurs at any time, the game is terminated and a winner is determined. Win conditions are as follows:   
 1. If a player's store has the the majority of available seeds, that player has won the game. As there are 12 pits * 6 seeds = 72 total seeds, a player would require 37 total seeds in their store to win.  
