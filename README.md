@@ -29,3 +29,12 @@ The very first move in a new game will prompt the opponent to steal the move as 
 If a game-ending scenario occurs at any time, the game is terminated and a winner is determined. Win conditions are as follows:   
 1. If a player's store has the the majority of available seeds, that player has won the game. As there are 12 pits * 6 seeds = 72 total seeds, a player would require 37 total seeds in their store to win.  
 2. If all of a player's pits are empty, the opponent moves all of seeds in their pits into their own store and the game is over. Whoever has the most seeds wins (a tie is possible).  
+
+**First Activity**  
+![Screenshot_20221211-225443_Kalah](https://user-images.githubusercontent.com/92837310/206957366-b2e2f464-7666-46ff-86f7-147761f5392e.jpg)
+
+**Second Activity**  
+![Screenshot_20221211-225448_Kalah](https://user-images.githubusercontent.com/92837310/206957387-0a230f6c-e43e-4a06-bd76-998b8c2e3013.jpg)
+
+**Third Activity**  
+![Screenshot_20221211-225454_Kalah](https://user-images.githubusercontent.com/92837310/206957461-dd47f0da-a8fc-40ac-baab-6f5542e31ec7.jpg)
