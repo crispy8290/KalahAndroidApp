@@ -34,7 +34,7 @@ If a game-ending scenario occurs at any time, the game is terminated and a winne
 ![Screenshot_20221211-225443_Kalah](https://user-images.githubusercontent.com/92837310/206957554-3cbb4997-1cb2-406a-b5c6-e30d36250d24.jpg)
 
 **Second Activity**  
-![Screenshot_20221211-225454_Kalah](https://user-images.githubusercontent.com/92837310/206957561-07f53ade-e085-4713-8fa3-a3a74f8d63cd.jpg)
+![Screenshot_20221211-225448_Kalah](https://user-images.githubusercontent.com/92837310/206957566-3662417a-2777-4a70-a52e-446a97eff12a.jpg)
 
 **Third Activity**  
-![Screenshot_20221211-225448_Kalah](https://user-images.githubusercontent.com/92837310/206957566-3662417a-2777-4a70-a52e-446a97eff12a.jpg)
+![Screenshot_20221211-225454_Kalah](https://user-images.githubusercontent.com/92837310/206957561-07f53ade-e085-4713-8fa3-a3a74f8d63cd.jpg)
