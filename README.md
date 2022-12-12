@@ -17,7 +17,7 @@ Player 2 owns the upper row of pits and the left store.
 *Objective*  
 The objective of the game is for a player to have the majority of available seeds in their own store.  
 
-*Player Turn*
+*Player Turn*  
 During a player's turn, the player selects one of their own non-empty pits and takes all the seeds and distributes them in a counter-clockwise order, dropping one seed at each pit (including their own store). A player does not deposit a seed into the opponent's store, and instead skips it completely. There are two special checks that occur at the end of the seed distribution. If neither of these events occur, the player's turn ends.    
 1. If a player's last seed drop lands in their own store, the player takes another turn.  
 2. If a player's last seed drop lands in one of their own empty pits, the player puts that last seed in their store instead, along with any seeds that are in the opponent's directly-opposing pit.  
