@@ -31,10 +31,10 @@ If a game-ending scenario occurs at any time, the game is terminated and a winne
 2. If all of a player's pits are empty, the opponent moves all of seeds in their pits into their own store and the game is over. Whoever has the most seeds wins (a tie is possible).  
 
 **First Activity**  
-![Screenshot_20221211-225443_Kalah](https://user-images.githubusercontent.com/92837310/206957366-b2e2f464-7666-46ff-86f7-147761f5392e.jpg)
+![Screenshot_20221211-225443_Kalah](https://user-images.githubusercontent.com/92837310/206957554-3cbb4997-1cb2-406a-b5c6-e30d36250d24.jpg)
 
 **Second Activity**  
-![Screenshot_20221211-225448_Kalah](https://user-images.githubusercontent.com/92837310/206957387-0a230f6c-e43e-4a06-bd76-998b8c2e3013.jpg)
+![Screenshot_20221211-225454_Kalah](https://user-images.githubusercontent.com/92837310/206957561-07f53ade-e085-4713-8fa3-a3a74f8d63cd.jpg)
 
 **Third Activity**  
-![Screenshot_20221211-225454_Kalah](https://user-images.githubusercontent.com/92837310/206957461-dd47f0da-a8fc-40ac-baab-6f5542e31ec7.jpg)
+![Screenshot_20221211-225448_Kalah](https://user-images.githubusercontent.com/92837310/206957566-3662417a-2777-4a70-a52e-446a97eff12a.jpg)
