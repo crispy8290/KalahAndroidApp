@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 public class gameActivity extends AppCompatActivity
 {
     private Integer[] board;
@@ -111,6 +114,8 @@ public class gameActivity extends AppCompatActivity
 
     public void firstTurn(View v) //first move of each game
     {
+        pulse(v, 300); //pit pulses for 300ms
+
         Button button = (Button)v;
         startPoint = getPitIndex(button.getId());
         curr = startPoint;
@@ -160,62 +165,74 @@ public class gameActivity extends AppCompatActivity
 
     public void yesSteal(View v) //yes to steal is pressed
     {
-        makeBoard(); //resets the board
+        pulse(v, 300); //button pulses for 300ms
 
-        //perform identical move for stealing player
-        int newStartPoint;
-        if(roundNumber % 2 == 1) //if player 1 started
-        {
-            newStartPoint = (pits/2) + startPoint; //initialize new start point for player 2
-        }
-        else //player 2 started
-        {
-            newStartPoint = startPoint - (pits/2); //initialize new start point for player 1
-        }
-        curr = newStartPoint; //keep track of new starting point index
-        int seedDrop = board[newStartPoint]; //obtain number of seeds to be dropped
-        board[newStartPoint] = 0; //set starting point to 0 seeds
+        //runs the stealing algorithm after 300ms delay
+        Handler handler = new Handler();
+        handler.postDelayed(() -> {
+            makeBoard(); //resets the board
 
-        for(int i=seedDrop;i>0;i--) //moves until there are no more seeds left to be dropped
-        {
-            int next = curr+1; //keeps track of next pit index
-
-            if(curr % (pits-1) == 0 && curr != 0) //reached end of array and makes sure curr != 0 (curr is only 0 when pointer resets to beginning of array)
+            //perform identical move for stealing player
+            int newStartPoint;
+            if(roundNumber % 2 == 1) //if player 1 started
             {
-                curr = -1;
-                next = 0;
+                newStartPoint = (pits/2) + startPoint; //initialize new start point for player 2
             }
+            else //player 2 started
+            {
+                newStartPoint = startPoint - (pits/2); //initialize new start point for player 1
+            }
+            curr = newStartPoint; //keep track of new starting point index
+            int seedDrop = board[newStartPoint]; //obtain number of seeds to be dropped
+            board[newStartPoint] = 0; //set starting point to 0 seeds
 
-            if(playerTurn == 1 && next == player2StoreIndex || playerTurn == 2 && next == player1StoreIndex) //if opponent's store, skip seed drop
+            for(int i=seedDrop;i>0;i--) //moves until there are no more seeds left to be dropped
             {
-                i++; //no seed is dropped, counter restores by one
+                int next = curr+1; //keeps track of next pit index
+
+                if(curr % (pits-1) == 0 && curr != 0) //reached end of array and makes sure curr != 0 (curr is only 0 when pointer resets to beginning of array)
+                {
+                    curr = -1;
+                    next = 0;
+                }
+
+                if(playerTurn == 1 && next == player2StoreIndex || playerTurn == 2 && next == player1StoreIndex) //if opponent's store, skip seed drop
+                {
+                    i++; //no seed is dropped, counter restores by one
+                }
+                else //drop seed
+                {
+                    board[next] = board[next]+1; //drops a seed
+                }
+                curr++; //moves to next index
             }
-            else //drop seed
-            {
-                board[next] = board[next]+1; //drops a seed
-            }
-            curr++; //moves to next index
-        }
-        hideYesNoButtons(); //hides and disables yes/no buttons
-        hideMessage(); //hides eventPrompt and playerName messages
-        checkRepeatTurn(); //check to see if copied move allows for a repeat turn
-        playerTurnSwitch(); //change player turn
-        showPlayerTurn(); //update player turn
-        disableEnablePits(); //restore pit buttons' functionality
-        changeRegularPitButtons(); //changes all on-click to playerMove
-        showBoard(); //show board
+            hideYesNoButtons(); //hides and disables yes/no buttons
+            hideMessage(); //hides eventPrompt and playerName messages
+            checkRepeatTurn(); //check to see if copied move allows for a repeat turn
+            playerTurnSwitch(); //change player turn
+            showPlayerTurn(); //update player turn
+            disableEnablePits(); //restore pit buttons' functionality
+            changeRegularPitButtons(); //changes all on-click to playerMove
+            showBoard(); //show board
+        }, 300);
     }
 
     public void noSteal(View v) //no to steal is pressed
     {
-        playerTurnSwitch(); //switch player turns
-        hideYesNoButtons(); //hides and disables yes/no buttons
-        hideMessage(); //hides eventPrompt and playerName messages
-        checkRepeatTurn(); //check to see if copied move allows for a repeat turn
-        playerTurnSwitch(); //change player turn
-        showPlayerTurn(); //update player turn
-        disableEnablePits(); //restore pit buttons' functionality
-        changeRegularPitButtons(); //changes all on-click to playerMove
+        pulse(v, 300); //button pulses for 300ms
+
+        //change message and buttons after 300ms
+        Handler handler = new Handler();
+        handler.postDelayed(() -> {
+            playerTurnSwitch(); //switch player turns
+            hideYesNoButtons(); //hides and disables yes/no buttons
+            hideMessage(); //hides eventPrompt and playerName messages
+            checkRepeatTurn(); //check to see if copied move allows for a repeat turn
+            playerTurnSwitch(); //change player turn
+            showPlayerTurn(); //update player turn
+            disableEnablePits(); //restore pit buttons' functionality
+            changeRegularPitButtons(); //changes all on-click to playerMove
+        }, 300);
     }
 
     public void changeRegularPitButtons() //change all on-click to playerMove
@@ -233,6 +250,7 @@ public class gameActivity extends AppCompatActivity
 
     public void playerMove(View v) //regular player move
     {
+        pulse(v, 300); //pit pulses for 300ms
         Button button = (Button)v;
         int startPoint = getPitIndex(button.getId());
         curr = startPoint;
@@ -283,7 +301,6 @@ public class gameActivity extends AppCompatActivity
             showContinueButton(); //display continue button, which displays play again message after being clicked
         }
     }
-
 
     public void playerTurnSwitch() //switches playerTurn value
     {
@@ -582,34 +599,50 @@ public class gameActivity extends AppCompatActivity
 
     public void continueButtonPressed(View v) //shows playAgain message and buttons, hides and disables continueButton
     {
-        hideMessage(); //hides winner message
-        showMessage(false,4); //shows playAgain message and buttons
-        Button continueButton = (Button)v;
-        continueButton.setEnabled(false); //makes button enabled
-        continueButton.setVisibility(View.INVISIBLE); //make button visible
+        pulse(v, 300); //button pulses for 300ms
+
+        //change message and buttons after 300ms
+        Handler handler = new Handler();
+        handler.postDelayed(() -> {
+            hideMessage(); //hides winner message
+            showMessage(false,4); //shows playAgain message and buttons
+            Button continueButton = (Button)v;
+            continueButton.setEnabled(false); //makes button enabled
+            continueButton.setVisibility(View.INVISIBLE); //make button visible
+        }, 300);
     }
 
     public void yesPlayAgain(View v) //yes to playAgain is pressed
     {
-        hideYesNoButtons(); //hide both yes and no buttons
-        hideMessage();
-        changeFirstTurnPitButtons();
-        startGame();
+        pulse(v, 300); //button pulses for 300ms
+
+        //change message, buttons, and start the game after 300ms
+        Handler handler = new Handler();
+        handler.postDelayed(() -> {
+            hideYesNoButtons(); //hide both yes and no buttons
+            hideMessage();
+            changeFirstTurnPitButtons();
+            startGame();
+        }, 300);
     }
 
     public void noPlayAgain(View v) //no to playAgain is pressed, app exits after 5 seconds
     {
-        hideYesNoButtons(); //hide both yes and no buttons
-        showMessage(false, 5); //thank you for playing message displayed
+        pulse(v, 300); //button pulses for 300ms
 
-        Handler handler = new Handler(); //create Handler object
-        handler.postDelayed(new Runnable() {
-            public void run()
-            {
-                Intent i = new Intent(v.getContext(), MainActivity.class); //create intent to main page
-                startActivity(i); //go to main page
-                finish(); //finish current activity
-            }
+        //change message and buttons after 300ms
+        Handler handler1 = new Handler();
+        handler1.postDelayed(() -> {
+            hideYesNoButtons(); //hide both yes and no buttons
+            showMessage(false, 5); //thank you for playing message displayed
+        }, 300);
+
+        //go to main menu after 5 secs
+        Handler handler2 = new Handler(); //create Handler object
+        handler2.postDelayed(() -> {
+            Intent i = new Intent(v.getContext(), MainActivity.class); //create intent to main page
+            startActivity(i); //go to main page
+            finish(); //finish current activity
         }, 5000); //5 second delay
     }
 
@@ -771,5 +804,10 @@ public class gameActivity extends AppCompatActivity
             default: exit(0); //should never execute
                 return 0; //should never execute
         }
+    }
+
+    public void pulse(View v, int duration)
+    {
+        YoYo.with(Techniques.Pulse).duration(duration).playOn(v); //view will pulse for duration ms
     }
 }
