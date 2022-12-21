@@ -5,7 +5,7 @@ A variation to Mancala, a 2-player turn-based strategy board game.
 Developed for 6.5 inch screens with a resolution of 1080 x 2400 pixels  
 
 **Version Number**  
-1.0  
+1.1  
 
 **Rules**  
 *Setup*  
